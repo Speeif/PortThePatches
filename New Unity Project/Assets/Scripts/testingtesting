@@ -1,0 +1,241 @@
+void Update() {
+    switch (state) {
+        case GameStates.opening:
+            break;
+        case GameStates.beforeRunning:
+            //Set variables
+            GarbageSpawner.state = FloatTowards.MyStates.beforeRunning;
+            timeBegin = Time.realtimeSinceStartup;
+            currentTime = 0;
+            state = GameStates.running;
+            break;
+        case GameStates.running:
+            //Time since the day cyclus began. 
+            currentTime = Time.realtimeSinceStartup - timeBegin;
+            //Check if real time exceeds turnTime threshold.
+            if (currentTime >= turnTime) {
+                state = GameStates.beforePausing;
+            }
+            //Scale the time by a cosine function using realtime, so that the game may spand over turntime
+            Time.timeScale = (Mathf.Cos(1 * Mathf.PI + 2 * Mathf.PI * currentTime / turnTime) + 1);
+            break;
+        case GameStates.beforePausing:
+            //Set gain and variable for current day
+            Budget += PO / 100 * 1000;
+            Time.timeScale = 0;
+            //Spawn a destined amount of events
+            for (int i = 0; i < 2; i++) {
+                if (events.Count == 0) break;
+                eventsParent.CreateEvent(events[0]);
+                events.Remove(events[0]);
+            }
+            GarbageSpawner.state = FloatTowards.MyStates.paused;
+            state = GameStates.pausing;
+            break;
+        case GameStates.pausing:
+            //No current events in session? Begin running once again
+            if (eventsParent.currentEvents.Count == 0) {
+                state = GameStates.beforeRunning;
+            }
+            break;
+        case GameStates.ending:
+            //Display end screen & score. Wait for user input.
+            endscreen.SetActive(true);
+            finalScore = (PO / 100 * Budget) - (garbageAcc / 100 * totalGarbage);
+            finalScoreText.text = "Your score became:\n" + finalScore;
+            state = GameStates.empty;
+            break;
+        case GameStates.empty: break;
+    }
+
+    if (eventsParent.currentEvents.Count == 0 && events.Count == 0) {
+        //End game if there are no more events
+        state = GameStates.ending;
+    }
+
+    //Update public opinion
+    publicOpinionText.text = PO.ToString() + "%";
+    //update budget
+    budgetText.text = "$" + Budget.ToString();
+    //update garbage accumulation
+    garbageAccumulationText.text = garbageAcc.ToString() + " pr.dag";
+    //udate amount of garbage
+    totalGarbageText.text = totalGarbage.ToString();
+
+    if (Input.GetKeyDown(KeyCode.Escape)) {
+        Application.Quit();
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public void CreateEvent(Event e) {
+    GameObject temp = Instantiate(spawnable, new Vector2(0, 0), new Quaternion(0, 0, 0, 1));
+    Event eve = temp.GetComponent<Event>();
+    //Update Text
+    eve.land = e.land;
+    eve.head = e.head;
+    eve.text = e.text;
+    eve.researchText = e.researchText;
+    eve.yes = e.yes;
+    eve.no = e.no;
+    eve.research = e.research;
+    eve.ignore = e.ignore;
+    eve.transform.SetParent(this.gameObject.transform);
+    eve.GetComponent<RectTransform>().localPosition += new Vector3(0, -50 * currentEvents.Count + 35, 0);
+    currentEvents.Add(eve);
+}
+public void RemoveEvent(Event e) {
+    if (currentEvents.IndexOf(e) < currentEvents.Count) {
+        for (int i = currentEvents.IndexOf(e) + 1; i < currentEvents.Count; i++) {
+            currentEvents[i].GetComponent<RectTransform>().localPosition += new Vector3(0, e.InforPanel.rect.height, 0);
+        }
+    }
+    currentEvents.Remove(e);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        case GameStates.pausing:
+            //No current events in session? Begin running once again
+            if (eventsParent.currentEvents.Count == 0) {
+                state = GameStates.beforeRunning;
+            }
+            break;
+        case GameStates.ending:
+            //Display end screen & score. Wait for user input.
+            endscreen.SetActive(true);
+            finalScore = (PO / 100 * Budget) - (garbageAcc / 100 * totalGarbage);
+            finalScoreText.text = "Your score became:\n" + finalScore;
+            state = GameStates.empty;
+            break;
+        case GameStates.empty: break;
+    }
+
+    if (eventsParent.currentEvents.Count == 0 && events.Count == 0) {
+        //End game if there are no more events
+        state = GameStates.ending;
+    }
+
+    //Update resources
+    publicOpinionText.text = PO.ToString() + "%";
+    //update budget
+    budgetText.text = "$" + Budget.ToString();
+    //update garbage accumulation
+    garbageAccumulationText.text = garbageAcc.ToString() + " pr.dag";
+    //udate amount of garbage
+    totalGarbageText.text = totalGarbage.ToString();
+}
+
+
+
+
+
+
+        case MyStates.running:
+            //Update Usable Variables
+            timer = Time.realtimeSinceStartup - lastTime;
+            spawndir = rotateVector2(spawndir, Random.Range(0, 180.0f));
+            if (timer >= spawnTime) {
+                //Create 3D object, and add the script(component) Plastic to it
+                Debug.Log("plastics: " + FindObjectsOfType<Plastic>().Length);
+                lastTime = Time.realtimeSinceStartup - (timer % spawnTime);
+                GameObject temp = Instantiate(Spawnables[Random.Range(0, Spawnables.Count)], new Vector3(transform.position.x, transform.position.y, transform.position.z) + new Vector3(spawndir.x, spawndir.y, 0) * spawnScale, transform.rotation);
+                temp.transform.localScale = new Vector3(0.055f, 0.055f, 0.055f);
+                Plastic a = temp.AddComponent<Plastic>();
+                //Make the plastic float towards this game object
+                a.FloatTowards(transform.position);
+                a.gm = gm;
+            }
+            break;
+
+
+
+void Update() {
+    if (!inactive) {
+        floatingCounter += Time.deltaTime;
+        transform.position += (Vector3)MoveDir * Time.deltaTime * 2;
+        transform.localRotation = Quaternion.Euler(Mathf.Cos(floatingCounter * 10) * 12 + 180, 0, 0);
+        if (Vector3.Distance(transform.position, Target) <= 0.1f) {
+            inactive = true;
+            gm.totalGarbage++;
+            gm.plastics.Add(gameObject);
+        }
+    }
+}
+public void FloatTowards(Vector3 dir) {
+    Target = dir;
+    MoveDir = Target - transform.position;
+    inactive = false;
+}
+
+
+
+    case MyStates.running:
+        //Update Usable Variables
+        timer = Time.realtimeSinceStartup - lastTime;
+        spawndir = rotateVector2(spawndir, Random.Range(0, 180.0f));
+        if (timer >= spawnTime) {
+            //Create 3D object, and add the script(component) Plastic to it
+            lastTime = Time.realtimeSinceStartup - (timer % spawnTime);
+            GameObjcet obj2spn = Spawnables[Random.Range(0,Spawnables.Count)];
+            Vector3 pos = transform.position - new Vector3(spawndir.x,spawndir.y,0) * spawnscale;
+            GameObject temp = Instantiate(obj2spn,pos,transform.rotation);
+            temp.transform.localScale = new Vector3(0.055f, 0.055f, 0.055f);
+            Plastic a = temp.AddComponent<Plastic>();
+            //Make the plastic float towards this game object
+            a.FloatTowards(transform.position);
+            a.gm = gm;
+        }
+        break;  

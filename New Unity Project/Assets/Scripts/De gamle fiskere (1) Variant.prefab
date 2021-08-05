@@ -1,0 +1,168 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &7202869256573033299
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6375466621413493792, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_Name
+      value: De gamle fiskere (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493795, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493794, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: text
+      value: "Nogle gamle fiskere har tilbudt at tage ud og rydde noget af skraldet
+        op fra skralde \xF8en. Accepterer du hj\xE6lpen?\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493794, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: researchText
+      value: "Efter en grundig unders\xF8gelse, har man fundet ud af at de b\xE5de
+        som fiskerne har t\xE6nkt sig at tage ud og rydde op i, er fra en \xE6ldre
+        generation, og vil derfor skulle bruge mere benzin der ville skade milj\xF8et
+        mere end det ville gavne."
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493794, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: yes.publicOpinion
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493794, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: yes.text
+      value: "De gamle fiskerb\xE5de bruger meget mere benzin end regnet med, men
+        f\xE5r samlet en smule skrald op. Da de nu har brugt s\xE5 meget benzin, er
+        det sv\xE6rt at sige om det var det v\xE6rd.\r\n"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493794, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: no.text
+      value: "Du afholder de gamle fiskere fra at hj\xE6lpe da det viser sig at det
+        forurener mere end det ville gavne. "
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493794, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: no.publicOpinion
+      value: -5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493794, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: research.budget
+      value: -250
+      objectReference: {fileID: 0}
+    - target: {fileID: 6375466621413493794, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9,
+        type: 3}
+      propertyPath: ignore.publicOpinion
+      value: -5
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 20b1f2cdeb18bf746b1b5fb8cf34a5f9, type: 3}
